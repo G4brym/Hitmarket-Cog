@@ -15,7 +15,7 @@ class Job(commands.Cog):
         super().__init__(*args, **kwargs)
 
     @commands.command()
-    async def jobs(self, ctx: commands.Context, *, msg: str) -> None:
+    async def jobs(self, ctx: commands.Context) -> None:
         data = requests.get("https://hitmarker.net/sitemap-jobs.xml")
         jobs = xmltodict.parse(data.content)
 
