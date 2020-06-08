@@ -14,6 +14,7 @@
   "name" : "Fun",
   "required_cogs" : {},
   "requirements" : [
+    "requests",
     "xmltodict"
   ],
   "short" : "Get latest Hitmarket jobs",
