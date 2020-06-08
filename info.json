@@ -1,0 +1,8 @@
+{
+  "author" : ["G4brym"],
+  "install_msg" : "Thanks for installing!",
+  "name" : "Hitmarket-cogs",
+  "short" : "Hitmarket jobs cogs.",
+  "description" : "Hitmarket job crawler",
+  "tags" : ["Hitmarket", "jobs", "Trigger"]
+}
