@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 import discord
 import requests
 import xmltodict
@@ -19,9 +21,14 @@ class Job(commands.Cog):
 
         embed = discord.Embed(colour=discord.Colour.blue())
 
-        for job in jobs["urlset"]["url"]:
+        last_24 = datetime.now() - timedelta(hours=24)
+        for index, job in enumerate(jobs["urlset"]["url"]):
             url = job["loc"]
+            date = datetime.fromisoformat(job["lastmod"])
             embed.add_field(name=self.parse_name(url), value=url)
+
+            if index > 25 or date > last_24:
+                break
 
         embed.set_footer(text="Powered by https://hitmarker.net")
         await ctx.send(embed=embed)
