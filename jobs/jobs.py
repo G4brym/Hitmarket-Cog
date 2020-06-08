@@ -24,7 +24,7 @@ class Job(commands.Cog):
         last_24 = datetime.now() - timedelta(hours=24)
         for index, job in enumerate(jobs["urlset"]["url"]):
             url = job["loc"]
-            date = datetime.fromisoformat(job["lastmod"])
+            date = datetime.fromisoformat(job["lastmod"].split("+")[0])
             embed.add_field(name=self.parse_name(url), value=url)
 
             if index > 25 or date > last_24:
